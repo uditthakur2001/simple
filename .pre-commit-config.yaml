@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: trufflehog
+        name: TruffleHog
+        entry: trufflehog filesystem --json .
+        language: system
+        files: .*

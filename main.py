@@ -1,22 +1,28 @@
-# simple_script.py
+# simple_calculator.py
 
-def read_file(file_path):
-    """Read and print the contents of a file."""
-    try:
-        with open(file_path, 'r') as file:
-            content = file.read()
-            print("File content:")
-            print(content)
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' was not found.")
-    except IOError:
-        print(f"Error: An IOError occurred while reading the file '{file_path}'.")
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Error: Division by zero is not allowed."
 
 def main():
-    """Main function to run the script."""
-    # Replace 'example.txt' with the path to your file
-    file_path = 'example.txt'
-    read_file(file_path)
+    print("Simple Calculator")
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    print(f"Addition: {add(a, b)}")
+    print(f"Subtraction: {subtract(a, b)}")
+    print(f"Multiplication: {multiply(a, b)}")
+    print(f"Division: {divide(a, b)}")
 
 if __name__ == '__main__':
     main()
